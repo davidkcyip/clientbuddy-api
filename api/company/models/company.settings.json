@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companies",
+  "info": {
+    "name": "Company",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "first_line": {
+      "type": "text"
+    },
+    "second_line": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "postcode": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "sites": {
+      "via": "company",
+      "collection": "site"
+    },
+    "vat_number": {
+      "type": "string"
+    },
+    "subscription": {
+      "model": "subscription",
+      "via": "company"
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "company"
+    }
+  }
+}

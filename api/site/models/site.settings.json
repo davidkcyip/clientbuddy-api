@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sites",
+  "info": {
+    "name": "Site",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "company": {
+      "model": "company",
+      "via": "sites"
+    },
+    "archived": {
+      "type": "boolean",
+      "default": false
+    },
+    "issues": {
+      "via": "site",
+      "collection": "issue"
+    },
+    "jira_url": {
+      "type": "string"
+    },
+    "jira_email": {
+      "type": "string"
+    },
+    "jira_api_key": {
+      "type": "string"
+    },
+    "jira_project": {
+      "type": "string"
+    }
+  }
+}

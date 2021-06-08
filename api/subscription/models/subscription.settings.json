@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subscriptions",
+  "info": {
+    "name": "Subscription",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "beta",
+        "trial",
+        "freelancer",
+        "agency",
+        "enterprise"
+      ]
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "company": {
+      "via": "subscription",
+      "model": "company"
+    },
+    "subscription_id": {
+      "type": "string"
+    },
+    "subscription_started": {
+      "type": "datetime"
+    },
+    "billing_cycle": {
+      "type": "enumeration",
+      "enum": [
+        "month",
+        "year"
+      ],
+      "default": "month"
+    },
+    "previous_billing_date": {
+      "type": "datetime"
+    },
+    "next_billing_date": {
+      "type": "datetime"
+    },
+    "subscription_line_id": {
+      "type": "string"
+    },
+    "cancel_date": {
+      "type": "datetime"
+    },
+    "trial_ends": {
+      "type": "datetime"
+    }
+  }
+}

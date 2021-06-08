@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_integration_jiras",
+  "info": {
+    "name": "Jira",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "integration_url": {
+      "type": "string"
+    },
+    "api_username": {
+      "type": "string"
+    },
+    "api_password": {
+      "type": "string"
+    }
+  }
+}

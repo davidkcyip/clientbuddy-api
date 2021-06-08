@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "issues",
+  "info": {
+    "name": "Issue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "attachments": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "comments": {
+      "collection": "comment",
+      "via": "issue"
+    },
+    "assigned_to": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "issues"
+    },
+    "useragent": {
+      "type": "string"
+    },
+    "browser_height": {
+      "type": "decimal"
+    },
+    "browser_width": {
+      "type": "decimal"
+    },
+    "screen_width": {
+      "type": "decimal"
+    },
+    "screen_height": {
+      "type": "decimal"
+    },
+    "url": {
+      "type": "string"
+    },
+    "site": {
+      "model": "site",
+      "via": "issues"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "todo",
+        "in_progress",
+        "done"
+      ],
+      "default": "todo"
+    },
+    "reported_by": {
+      "type": "string"
+    },
+    "board_position": {
+      "type": "integer",
+      "default": 9999
+    }
+  }
+}
