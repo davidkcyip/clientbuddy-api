@@ -17,6 +17,7 @@
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
     "knex": "0.21.18",
+    "platformsh-config": "^2.4.1",
     "request": "^2.88.2",
     "sqlite3": "5.0.0",
     "strapi": "3.5.4",

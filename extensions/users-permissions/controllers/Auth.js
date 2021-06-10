@@ -477,7 +477,7 @@ module.exports = {
 
 			// if user already existed and is being invited then update user's company 
 			if (existingUser && params.invitation_code) {
-				user = await strapi.query('user', 'users-permissions').update({ id: existingUser.id }, { company: params.company, blocked: true });
+				user = await strapi.query('user', 'users-permissions').update({ id: existingUser.id }, { company: params.company, blocked: true, invitation_code: params.invitation_code });
 			} else {
 				user = await strapi.query('user', 'users-permissions').create({
 					...params,
