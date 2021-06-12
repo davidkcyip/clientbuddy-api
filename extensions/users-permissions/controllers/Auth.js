@@ -326,7 +326,7 @@ module.exports = {
 					<br />
 					<div>You are receiving this email because you have requested to reset your password. You can do so by following the link below:</div>
 					<br />
-					<div>https://app.clientbuddy.net/auth/reset-password/${resetPasswordToken}</div>
+					<div>https://www.clientbuddy.net/auth/reset-password/${resetPasswordToken}</div>
 					<br />
 					<div>Best Regards,</div>
 					<br />
@@ -511,7 +511,7 @@ module.exports = {
 						<br />
 						<div>You have been invited to the ${user.company.name} workspace on Client Buddy.</div>
 						<br />
-						<div>Please set-up your password <a href="https://app.clientbuddy.net/auth/accept-invitation/${params.invitation_code}">here</a>.</div>
+						<div>Please set-up your password <a href="https://www.clientbuddy.net/auth/accept-invitation/${params.invitation_code}">here</a>.</div>
 						<br />
 						<div>Best Regards,</div>
 						<br />
@@ -526,9 +526,9 @@ module.exports = {
 					html: `
 						<div>Hi ${params.first_name}!</div>
 						<br />
-						<div>Thank you for choosing Client Buddy as your bug reporting tool. Please take a look at our <a href="https://clientbuddy.net/support/">documentation</a> and set-up your first site on Client Buddy.</div>
+						<div>Thank you for choosing Client Buddy as your bug reporting tool. Please take a look at our <a href="https://www.clientbuddy.net/support/">documentation</a> and set-up your first site on Client Buddy.</div>
 						<br />
-						<div>If you have any questions, please don't hesitate to contact us by emailing support@clientbuddy.net.</div>
+						<div>If you have any questions, please don't hesitate to contact us by emailing hello@clientbuddy.net.</div>
 						<br />
 						<div>Best Regards,</div>
 						<br />

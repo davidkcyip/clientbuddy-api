@@ -80,7 +80,7 @@ module.exports = {
                     <br />
                     <div>Description: ${ctx.request.body.description}</div>
                     <br />
-                    <div>To see this report in full detail, please go to https://app.clientbuddy.net/admin/issues/${newIssue.id}</div>
+                    <div>To see this report in full detail, please go to https://www.clientbuddy.net/admin/issues/${newIssue.id}</div>
 					<br />
 					<div>Best Regards,</div>
 					<br />
@@ -127,7 +127,7 @@ module.exports = {
                         <h2>${issue.title}</h2>
                         <div>${issue.description}</div>
                         <br />
-                        <div>To see this report in full detail, please go to https://app.clientbuddy.net/admin/issues/${updatedIssue.id}</div>
+                        <div>To see this report in full detail, please go to https://www.clientbuddy.net/admin/issues/${updatedIssue.id}</div>
                         <br />
                         <div>Best Regards,</div>
                         <br />

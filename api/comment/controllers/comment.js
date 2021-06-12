@@ -40,7 +40,7 @@ module.exports = {
                         <br />
                         <div>${ctx.request.body.text}</div>
                         <br />
-                        <div>To see this comment in its full context, please go to https://app.clientbuddy.net/admin/issues/${issue.id}</div>
+                        <div>To see this comment in its full context, please go to https://www.clientbuddy.net/admin/issues/${issue.id}</div>
                         <br />
                         <div>Best Regards,</div>
                         <br />
