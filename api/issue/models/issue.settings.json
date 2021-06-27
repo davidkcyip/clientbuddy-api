@@ -56,8 +56,8 @@
       "type": "string"
     },
     "site": {
-      "model": "site",
-      "via": "issues"
+      "via": "issues",
+      "model": "site"
     },
     "status": {
       "type": "enumeration",

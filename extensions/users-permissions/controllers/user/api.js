@@ -101,7 +101,7 @@ module.exports = {
                     <br />
                     <div>You have been invited to the ${loggedInUser.company.name} workspace on Client Buddy.</div>
                     <br />
-                    <div>Please set-up your password <a href="https://www.clientbuddy.net/auth/set-up-password/${ctx.request.body.invitation_code}">here</a>.</div>
+                    <div>Please set-up your password <a href="https://clientbuddy.net/auth/set-up-password/${ctx.request.body.invitation_code}">here</a>.</div>
                     <br />
                     <div>Best Regards,</div>
                     <br />

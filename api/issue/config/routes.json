@@ -55,6 +55,22 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "POST",
+      "path": "/issues/:id/add-attachment-to-trello",
+      "handler": "issue.addAttachmentToTrello",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/issues/:id/add-attachment-to-asana",
+      "handler": "issue.addAttachmentToAsana",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/05/2021 8:37:15 PM"
+    "x-generation-date": "06/27/2021 11:22:58 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -554,6 +554,77 @@
             }
           }
         ]
+      }
+    },
+    "/comments/email": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Comment"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/companies": {
@@ -1636,6 +1707,148 @@
       }
     },
     "/issues/{id}/add-attachment-to-jira": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Issue"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/issues/{id}/add-attachment-to-trello": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Issue"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/issues/{id}/add-attachment-to-asana": {
       "post": {
         "deprecated": false,
         "description": "Create a new record",
@@ -5078,6 +5291,33 @@
                 "jira_project": {
                   "type": "string"
                 },
+                "leankit_url": {
+                  "type": "string"
+                },
+                "leankit_api_key": {
+                  "type": "string"
+                },
+                "leankit_board": {
+                  "type": "string"
+                },
+                "trello_api_key": {
+                  "type": "string"
+                },
+                "trello_token": {
+                  "type": "string"
+                },
+                "trello_list": {
+                  "type": "string"
+                },
+                "trello_board": {
+                  "type": "string"
+                },
+                "asana_token": {
+                  "type": "string"
+                },
+                "asana_project": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -5531,6 +5771,33 @@
               "jira_project": {
                 "type": "string"
               },
+              "leankit_url": {
+                "type": "string"
+              },
+              "leankit_api_key": {
+                "type": "string"
+              },
+              "leankit_board": {
+                "type": "string"
+              },
+              "trello_api_key": {
+                "type": "string"
+              },
+              "trello_token": {
+                "type": "string"
+              },
+              "trello_list": {
+                "type": "string"
+              },
+              "trello_board": {
+                "type": "string"
+              },
+              "asana_token": {
+                "type": "string"
+              },
+              "asana_project": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -5776,6 +6043,33 @@
           },
           "jira_project": {
             "type": "string"
+          },
+          "leankit_url": {
+            "type": "string"
+          },
+          "leankit_api_key": {
+            "type": "string"
+          },
+          "leankit_board": {
+            "type": "string"
+          },
+          "trello_api_key": {
+            "type": "string"
+          },
+          "trello_token": {
+            "type": "string"
+          },
+          "trello_list": {
+            "type": "string"
+          },
+          "trello_board": {
+            "type": "string"
+          },
+          "asana_token": {
+            "type": "string"
+          },
+          "asana_project": {
+            "type": "string"
           }
         }
       },
@@ -5810,6 +6104,33 @@
             "type": "string"
           },
           "jira_project": {
+            "type": "string"
+          },
+          "leankit_url": {
+            "type": "string"
+          },
+          "leankit_api_key": {
+            "type": "string"
+          },
+          "leankit_board": {
+            "type": "string"
+          },
+          "trello_api_key": {
+            "type": "string"
+          },
+          "trello_token": {
+            "type": "string"
+          },
+          "trello_list": {
+            "type": "string"
+          },
+          "trello_board": {
+            "type": "string"
+          },
+          "asana_token": {
+            "type": "string"
+          },
+          "asana_project": {
             "type": "string"
           },
           "created_by": {

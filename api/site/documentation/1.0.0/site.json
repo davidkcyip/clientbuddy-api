@@ -671,6 +671,33 @@
           },
           "jira_project": {
             "type": "string"
+          },
+          "leankit_url": {
+            "type": "string"
+          },
+          "leankit_api_key": {
+            "type": "string"
+          },
+          "leankit_board": {
+            "type": "string"
+          },
+          "trello_api_key": {
+            "type": "string"
+          },
+          "trello_token": {
+            "type": "string"
+          },
+          "trello_list": {
+            "type": "string"
+          },
+          "trello_board": {
+            "type": "string"
+          },
+          "asana_token": {
+            "type": "string"
+          },
+          "asana_project": {
+            "type": "string"
           }
         }
       },
@@ -705,6 +732,33 @@
             "type": "string"
           },
           "jira_project": {
+            "type": "string"
+          },
+          "leankit_url": {
+            "type": "string"
+          },
+          "leankit_api_key": {
+            "type": "string"
+          },
+          "leankit_board": {
+            "type": "string"
+          },
+          "trello_api_key": {
+            "type": "string"
+          },
+          "trello_token": {
+            "type": "string"
+          },
+          "trello_list": {
+            "type": "string"
+          },
+          "trello_board": {
+            "type": "string"
+          },
+          "asana_token": {
+            "type": "string"
+          },
+          "asana_project": {
             "type": "string"
           },
           "created_by": {

@@ -32,6 +32,7 @@ module.exports = {
                 const msg = {
                     to: user.email,
                     from: 'hello@clientbuddy.net',
+                    replyTo: `issue.${issue ? issue.id : ''}@client-mail.clientbuddy.net`,
                     subject: `New comment posted on ${issue.title}`,
                     html: `
                         <div>Hi ${user.first_name}!</div>
@@ -40,7 +41,71 @@ module.exports = {
                         <br />
                         <div>${ctx.request.body.text}</div>
                         <br />
-                        <div>To see this comment in its full context, please go to https://www.clientbuddy.net/admin/issues/${issue.id}</div>
+                        <div>To see this comment in its full context, please go to https://clientbuddy.net/admin/issues/${issue.id}</div>
+                        <br />
+                        <div>If you wish to reply to this comment, please reply to this email or through the dashboard.</div>
+                        <br />
+                        <div>Best Regards,</div>
+                        <br />
+                        <div>ClientBuddy</div>
+                    `,
+                };
+                sgMail.send(msg);
+            }
+        });
+
+        return sanitizeEntity(newComment, { model: strapi.models.comment });
+    },
+
+    async createThroughEmail(ctx) {
+        let issueId = ctx.request.body.to && ctx.request.body.to.length ? ctx.request.body.to[0].email.split("@")[0] : null;
+        
+        if (issueId) {
+            const siteSplit = issueId.split(".");
+
+            if (siteSplit[0] === "issue") {
+                issueId = siteSplit[1];
+            } else {
+                issueId = null;
+            }
+        }
+        const emailUser = await strapi.query('user', 'users-permissions').findOne({ email: ctx.request.body.from.email });
+        const issue = await strapi.services.issue.findOne({ id: issueId });
+        const company = await strapi.services.company.findOne({ id: issue.site.company });
+
+        if (!emailUser) {
+            return ctx.badRequest(
+                null,
+                'You are not allowed'
+            );
+        }
+
+        const newComment = await strapi.services.comment.create({
+            text: ctx.request.body.text,
+            user: emailUser ? emailUser.id : null,
+            issue: issue ? issue.id : null
+        });
+
+        // new find all users who have want to receive new report notifications
+        const usersToNotify = company.users.filter(user => user.new_comment_notification);
+
+        usersToNotify.forEach(user => {
+            if (emailUser.id !== user.id) {
+                const msg = {
+                    to: user.email,
+                    from: 'hello@clientbuddy.net',
+                    replyTo: `issue.${issue ? issue.id : ''}@client-mail.clientbuddy.net`,
+                    subject: `New comment posted on ${issue.title}`,
+                    html: `
+                        <div>Hi ${user.first_name}!</div>
+                        <br />
+                        <div>A new comment has been posted on ${issue.title} by ${ctx.request.body.from.name}:</div>
+                        <br />
+                        <div>${ctx.request.body.text}</div>
+                        <br />
+                        <div>To see this comment in its full context, please go to https://clientbuddy.net/admin/issues/${issue.id}</div>
+                        <br />
+                        <div>If you wish to reply to this comment, please reply to this email or through the dashboard.</div>
                         <br />
                         <div>Best Regards,</div>
                         <br />
